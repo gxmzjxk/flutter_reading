@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
   _LoginPageState createState() => _LoginPageState();
@@ -61,23 +59,28 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(color: Color(0xff808080)),
                             ),
                           ),
-                          Container(
-                            height: 60.0,
-                            color: Colors.white,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset('images/wechatHL.png',
-                                    width: 30.0, height: 30.0),
-                                Container(
-                                  margin: EdgeInsets.only(left: 8.0),
-                                  child: Text('使用微信账号登录',
-                                      style:
-                                          TextStyle(color: Color(0xff808080))),
-                                )
-                              ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushNamed("sendAuth");
+                            },
+                            child: Container(
+                              height: 60.0,
+                              color: Colors.white,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Image.asset('images/wechatHL.png',
+                                      width: 30.0, height: 30.0),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 8.0),
+                                    child: Text('使用微信账号登录',
+                                        style: TextStyle(
+                                            color: Color(0xff808080))),
+                                  )
+                                ],
+                              ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
